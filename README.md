@@ -24,6 +24,7 @@ The project consists of a top level module named top. It instantiates these majo
 
 # VGA
 VGA Block Diagram I/F with FPGA:
+
 ![FPGA VGA Interface](https://user-images.githubusercontent.com/121945902/232077166-b9ecc95d-fe5f-4052-a610-df3717411618.png)
 
 # CPU  
