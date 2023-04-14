@@ -22,16 +22,26 @@ The project consists of a top level module named top. It instantiates these majo
 * CPU ROM
 * CPU RAM
 
-# VGA
+### VGA
 VGA Block Diagram I/F with FPGA:
 
 ![FPGA VGA Interface](https://user-images.githubusercontent.com/121945902/232077166-b9ecc95d-fe5f-4052-a610-df3717411618.png)
 
-# CPU  
-The CPU's functionality is exactly as described in the nand2tetris course book. But as we decided to use synchronous RAM, input data from it will lag until the next clock cycle. To workaround this issue, the CPU stalls every second clock cycle. By stalling we mean the A, D, and PC registers are not updated. This way, when the CPU is not stalled, the input data is up to date.
+### VGA RAM
+VGA RAM is synchronous RAM with 4096 addresses. Every address contains 8 bits that represent ASCII character. 
+
+### VGA ROM
+VGA ROM is synchronous Dual Port ROM that inculdes the 8x8 pixelmap for each ASCII character.
+
+The VGA logic block diagram:
+
+![VGA Logic](https://user-images.githubusercontent.com/121945902/232080550-f5755750-82e5-4eb1-a407-1d0e7c8b6215.png)
+
+
+### CPU  
+The CPU's functionality is exactly as described in the nand2tetris course book. But as we decided to use synchronous RAM, input data from it will lag until the next clock cycle. To workaround this issue, the CPU stalls every second clock cycle. By stalling we mean the A, D, and PC registers are not updated. This way, when the CPU is not stalled, the input data is up to date. The CPU also including the ALU.
 
 The CPU block diagram, as described in the course book:
 
 ![cpu_arch](https://user-images.githubusercontent.com/121945902/232078820-9ca0705b-a392-49e8-b793-81d4858fa25f.png)
-
 
