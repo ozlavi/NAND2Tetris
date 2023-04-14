@@ -28,10 +28,10 @@ VGA Block Diagram I/F with FPGA:
 ![FPGA VGA Interface](https://user-images.githubusercontent.com/121945902/232077166-b9ecc95d-fe5f-4052-a610-df3717411618.png)
 
 ### VGA RAM
-VGA RAM is synchronous RAM with 4096 addresses. Every address contains 8 bits that represent ASCII character. 
+VGA RAM is synchronous Dual Port RAM with 4096 addresses. Every address contains 8 bits that represent ASCII character. 
 
 ### VGA ROM
-VGA ROM is synchronous Dual Port ROM that inculdes the 8x8 pixelmap for each ASCII character.
+VGA ROM is synchronous ROM that inculdes the 8x8 pixelmap for each ASCII character.
 
 The VGA logic block diagram:
 
@@ -45,3 +45,6 @@ The CPU block diagram, as described in the course book:
 
 ![cpu_arch](https://user-images.githubusercontent.com/121945902/232078820-9ca0705b-a392-49e8-b793-81d4858fa25f.png)
 
+# Assembler
+
+The assembler converts .asm file to .mif file following the course book instructions. The .mif file is loaded by the different memories in the system.
