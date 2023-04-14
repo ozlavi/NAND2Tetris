@@ -47,4 +47,7 @@ The CPU block diagram, as described in the course book:
 
 # Assembler
 
-The assembler converts .asm file to .mif file following the course book instructions. The .mif file is loaded by the different memories in the system.
+The assembler is a python code that converts .asm file to .mif file following the course book instructions. The .mif file is loaded by the different memories in the system.
+
+![image](https://user-images.githubusercontent.com/121945902/232081297-9dd4b171-95e3-4386-85ce-75e797daa1b3.png)
+
