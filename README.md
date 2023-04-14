@@ -15,15 +15,15 @@ In this repository, we have included all the necessary files and documentation f
 # Design
 The project consists of a top level module named top. It instantiates these major submodules:
 
-VGA
-VGA RAM
-VGA ROM
-CPU
-CPU ROM
-CPU RAM
-
+* VGA
+* VGA RAM
+* VGA ROM
+* CPU
+* CPU ROM
+* CPU RAM
 
 # VGA
+VGA Block Diagram I/F with FPGA:
 ![FPGA VGA Interface](https://user-images.githubusercontent.com/121945902/232077166-b9ecc95d-fe5f-4052-a610-df3717411618.png)
 
 # CPU  
@@ -31,4 +31,6 @@ The CPU's functionality is exactly as described in the nand2tetris course book. 
 
 The CPU block diagram, as described in the course book:
 
-CPU Block Diagram
+![cpu_arch](https://user-images.githubusercontent.com/121945902/232078820-9ca0705b-a392-49e8-b793-81d4858fa25f.png)
+
+
