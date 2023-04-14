@@ -12,6 +12,17 @@ By completing the project, we gained a deep understanding of how computers work 
 In this repository, we have included all the necessary files and documentation for our custom-built computer system, including schematics, verilog codes, python codes and a detailed README file that outlines the project's goals, requirements, and implementation details. Overall, this project was a significant achievement and a valuable learning experience in the field of computer science and electronics engineering.
 
 
+# Design
+The project consists of a top level module named top. It instantiates these major submodules:
+
+VGA
+VGA RAM
+VGA ROM
+CPU
+CPU ROM
+CPU RAM
+
+
 # VGA
 ![FPGA VGA Interface](https://user-images.githubusercontent.com/121945902/232077166-b9ecc95d-fe5f-4052-a610-df3717411618.png)
 
