@@ -4,10 +4,12 @@ input rst_n, // reset
 input [15:0] inst, // instruction from ROM
 input [15:0] inM, // input from RAM
  
+ output ram_wr_en,
+ output ram_screen_wr_en,
  
  output [15:0] outM, // output for RAM
  output writeM, // write to meomry (write enable)
- output [14:0] addressM, // address to RAM
+ output [15:0] addressM, // address to RAM
  output reg [14:0] pc  // Program counter
 );
 
@@ -29,13 +31,18 @@ reg [15:0] d_reg; // D register input for ALU (x)
 reg [15:0] a_reg; // A register 
 wire load_a;
 
-assign load_a = ~inst[15] | (inst[15] & inst[5]);
-assign load_d = inst[15] & inst[4];
-assign jump = inst[15] & ((~ng & inst[0]) | (ng & inst[2]) | (zr & inst[1]));
+
+assign ram_wr_en = writeM ? ~a_reg[15] : 1'b0;
+assign ram_screen_wr_en = writeM ? a_reg[15] : 1'b0;
+
+
+assign load_a = ~inst[15] | (inst[15] & inst[5]) | (inst[15:13] == 3'b100);
+assign load_d = (inst[15:13] == 3'b111) & inst[4];
+assign jump = (inst[15:13] == 3'b111) & ((~ng & inst[0]) | (ng & inst[2]) | (zr & inst[1]));
 assign am_reg = inst[12] ? inM : a_reg;
-assign writeM = inst[15] & inst [3] & pc_w;
+assign writeM = (inst[15:13] == 3'b111) & inst[3] & pc_w;
 assign outM = alu_out;
-assign addressM = a_reg[14:0];
+assign addressM = a_reg[15:0];
 
 // D register
 // D register is loaded only when inst[15] is 1 and inst[4] (dest2) is 1
@@ -48,8 +55,9 @@ end
 // A register is loaded only when inst[15] is 1 and inst[5] (dest1) is 1
 always@(posedge clk)
 begin
-	if (load_a) a_reg <= pc_w ? (inst[15] ? alu_out : inst) : a_reg;
-end
+	//if (load_a) a_reg <= pc_w ? (inst[15] ? alu_out : inst) : a_reg;
+	if (load_a) a_reg <= pc_w ? ((inst[15:13] == 3'b111) ? alu_out : inst) : a_reg;
+	end
 
 always@(posedge clk or negedge rst_n)
 begin

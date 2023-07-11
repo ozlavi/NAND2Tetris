@@ -1,6 +1,5 @@
 // VGA Sync machine
 //
-// 4/11/2021 Compiled from various sources
 
 module vga_controller #(
    parameter h_pixels   = 640,   // horizontal display
