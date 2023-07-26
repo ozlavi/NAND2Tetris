@@ -1,5 +1,5 @@
 # NAND2Tetris
-NAND2Tetris project - Created by Oz Lavi and Aviad Akiva
+NAND2Tetris project - Created by Oz Lavi
 
 Final Project: Building a Modern Computer System from the Ground Up with NAND2Tetris
 
